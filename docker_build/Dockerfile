@@ -33,6 +33,8 @@ RUN \
     cd ffmpeg && \
     wget https://github.com/jocover/jetson-ffmpeg/raw/master/ffmpeg_nvmpi.patch && \
     git apply ffmpeg_nvmpi.patch && \
+    wget https://github.com/brettdellandre/jetson_docker_ffmpeg/blob/main/patches/0001-ffmpeg-Accelerated-hardware-decode-support-on-Jetson.patch && \
+    git apply 0001-ffmpeg-Accelerated-hardware-decode-support-on-Jetson.patch && \
     ./configure --enable-nvmpi --enable-nvv4l2dec --enable-libv4l2 --enable-shared --extra-libs="-L/usr/lib/aarch64-linux-gnu/tegra -lnvbuf_utils" --extra-cflags="-I /usr/src/jetson_multimedia_api && \
     make && \
     apt-get remove -y git curl unrar tzdata wget automake cmake make \

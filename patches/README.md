@@ -1,3 +1,5 @@
+## https://ffmpeg.org/pipermail/ffmpeg-devel/2020-June/263746.html
+
 This patch supports hardware-accelerated decode in ffmpeg on Jetson platforms.
 
 ffmpeg application can use accelerated decode to read video files in the following elementary/container formats and dump them in YUV 420 format:
@@ -36,4 +38,3 @@ VP9:   ffmpeg -c:v vp9_nvv4l2dec -i <input file> <output file>
 Example command: 
 ffmpeg -c:v mpeg2_nvv4l2dec -i libmpeg2bug.ts output_420.yuv
 (Input file is referenced from https://samples.ffmpeg.org/MPEG2/)
-
